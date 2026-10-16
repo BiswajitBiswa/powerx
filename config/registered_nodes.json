@@ -1,0 +1,15 @@
+{
+  "node-01-primary-workstation": {
+    "node_index": 1,
+    "node_id": "node-01-primary-workstation",
+    "role": "head",
+    "hostname": "workstation-01.local",
+    "ip_address": "192.168.1.144",
+    "hardware_type": "unified_silicon",
+    "device_model": "Unified Architecture",
+    "gpu_cores": 14,
+    "vram_total_gb": 16.0,
+    "registered_at": 1791971494.749887,
+    "is_head_node": true
+  }
+}

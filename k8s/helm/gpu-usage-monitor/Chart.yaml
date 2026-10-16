@@ -1,0 +1,8 @@
+apiVersion: v2
+name: gpu-usage-monitor
+description: NVIDIA GPU Usage Monitor with Hybrid GPU Mesh Integration
+type: application
+version: 1.0.0
+appVersion: "3.3.5"
+maintainers:
+  - name: PowerX Core Architecture Team

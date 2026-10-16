@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <!-- 360-Degree Ambient Depth Shadow (All around the whole circle, top included) -->
+    <filter id="btn-pop-360-logo" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3.5" flood-color="#0f172a" flood-opacity="0.18" />
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12" />
+    </filter>
+
+    <!-- Thick 360 Bezel: Defined, dark-enough neutral contrast top to bottom -->
+    <linearGradient id="thick-bezel-logo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8f96a3" />
+      <stop offset="20%" stop-color="#adb4c0" />
+      <stop offset="50%" stop-color="#c6ccd6" />
+      <stop offset="80%" stop-color="#9ea4b0" />
+      <stop offset="100%" stop-color="#656c78" />
+    </linearGradient>
+
+    <!-- Smooth 3D Convex Dome -->
+    <radialGradient id="convex-dome-logo" cx="38%" cy="32%" r="66%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="46%" stop-color="#ffffff" />
+      <stop offset="72%" stop-color="#f8fafc" />
+      <stop offset="88%" stop-color="#eef2f6" />
+      <stop offset="100%" stop-color="#cfd5df" />
+    </radialGradient>
+
+    <!-- Glass Glare Arc -->
+    <linearGradient id="glare-arc-logo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- 3D Gold Thunder (Left Lit Facet) -->
+    <linearGradient id="gold-lit-logo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4" />
+      <stop offset="30%" stop-color="#FEE500" />
+      <stop offset="70%" stop-color="#FACC15" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+
+    <!-- 3D Gold Thunder (Right Shaded Facet) -->
+    <linearGradient id="gold-shaded-logo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="50%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+
+    <filter id="gold-shadow-logo" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="2" flood-color="#78350f" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- 1. Thick Bezel & Outer 360-degree Shadow (8.5px heavy stroke, visible on top and bottom) -->
+  <circle cx="60" cy="60" r="49" fill="url(#convex-dome-logo)" stroke="url(#thick-bezel-logo)" stroke-width="8.5" filter="url(#btn-pop-360-logo)" />
+
+  <!-- 2. Inner Tactile Highlight Lip -->
+  <circle cx="60" cy="59.5" r="43.5" fill="none" stroke="#ffffff" stroke-width="2.2" opacity="0.95" />
+
+  <!-- 3. Specular Gloss Arc -->
+  <path d="M 32 46 C 36 28, 84 28, 88 46 C 78 36, 42 36, 32 46 Z" fill="url(#glare-arc-logo)" />
+  <ellipse cx="48" cy="30" rx="9" ry="3.5" transform="rotate(-15 48 30)" fill="#ffffff" opacity="0.95" />
+  <circle cx="60" cy="24" r="2" fill="#ffffff" opacity="0.95" />
+
+  <!-- 4. 3D Golden Thunderbolt -->
+  <g filter="url(#gold-shadow-logo)">
+    <path d="M 63 28 L 42 58 L 56 58 L 49 92 L 78 52 L 64 52 L 63 28 Z" fill="url(#gold-lit-logo)" />
+    <path d="M 63 28 L 64 52 L 78 52 L 49 92 L 59 58 L 63 28 Z" fill="url(#gold-shaded-logo)" />
+    <path d="M 63 28 L 59 58 L 49 92" stroke="#FFFDE7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+</svg>

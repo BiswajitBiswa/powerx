@@ -1,0 +1,42 @@
+# Default values for NVIDIA GPU Usage Monitor with Hybrid Mac Integration
+global:
+  clusterName: "hybrid-ai-cluster"
+
+dcgmExporter:
+  enabled: true
+  image:
+    repository: nvcr.io/nvidia/k8s/dcgm-exporter
+    tag: 3.3.5-3.4.1-ubuntu22.04
+    pullPolicy: IfNotPresent
+  service:
+    port: 9400
+  resources:
+    limits:
+      cpu: 200m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+
+macHybridIntegration:
+  enabled: true
+  macScrapeTargets:
+    - "192.168.1.50:9400"
+    - "192.168.1.51:9400"
+
+prometheus:
+  enabled: true
+  scrapeInterval: 5s
+  retention: "15d"
+  service:
+    port: 9090
+    type: ClusterIP
+
+grafana:
+  enabled: true
+  adminPassword: "admin"
+  service:
+    port: 3000
+    type: NodePort
+  dashboard:
+    enabled: true
